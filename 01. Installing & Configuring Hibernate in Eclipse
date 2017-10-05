@@ -1,5 +1,7 @@
 Sept 01. Installing Hibernate Plugin in Eclipse :
-
+                    MarketPlace -> search for Hibernate -> Choose Jboss & select hibarnet only
 
 
 Sept 02. Configuring Hibernate in Eclipse :
+
+                  File-> Others -> Hibernate Configaration File (cfg.xml)
