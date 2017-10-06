@@ -1,7 +1,11 @@
-Sept 01. Installing Hibernate Plugin in Eclipse :
+Sept 01. Add dependencies from:
+                    https://mvnrepository.com/artifact/org.hibernate/hibernate-core/4.1.6.Final
+                    https://mvnrepository.com/artifact/mysql/mysql-connector-java/5.1.38
+
+Sept 02. Installing Hibernate Plugin in Eclipse :
                     MarketPlace -> search for Hibernate -> Choose Jboss & select hibarnate only
 
 
-Sept 02. Configuring Hibernate in Eclipse :
+Sept 03. Configuring Hibernate in Eclipse :
 
                   File-> Others -> Hibernate Configaration File (cfg.xml)
