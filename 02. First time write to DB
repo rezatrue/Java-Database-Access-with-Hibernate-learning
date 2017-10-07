@@ -1,0 +1,59 @@
+STEP 01: create a database named: neon , ip address : localhost port : 3306, user : reza, password : reza
+
+
+STEP 02: create & configure hibernate.cfg.xml file
+
+<hibernate-configuration>
+    <session-factory name="MySQL">
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">reza</property>                              // password
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/neon</property>
+        <property name="hibernate.connection.username">reza</property>                              // user name
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+ 		<property name="hbm2ddl.auto">update</property>  
+    </session-factory>
+</hibernate-configuration>
+
+
+
+STEP 03: create an POJO class 
+
+@Entity
+public class Alien {
+	@Id
+	private int aid;
+	private String aname;
+	private String color;
+	
+	public int getAid() {
+		return aid;
+	}
+	public void setAid(int aid) {
+		this.aid = aid;
+	}
+  
+  .... // other getter & setter will be below here
+
+
+
+  STEP 04: main/caller class
+  
+  public static void main( String[] args )
+    {
+       Alien alien = new Alien();
+       alien.setAid(102);
+       alien.setAname("ali");
+       alien.setColor("red");
+       
+       Configuration con = new Configuration().configure().addAnnotatedClass(Alien.class);
+       
+       ServiceRegistry reg = new ServiceRegistryBuilder().applySettings(con.getProperties()).buildServiceRegistry();
+       
+       SessionFactory sf = con.buildSessionFactory(reg);
+       
+       Session session = sf.openSession();
+       Transaction tx = session.beginTransaction();
+       session.save(alien);
+       tx.commit();
+    }
+
