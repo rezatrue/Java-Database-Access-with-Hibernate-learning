@@ -11,6 +11,7 @@ STEP 02: create & configure hibernate.cfg.xml file
         <property name="hibernate.connection.username">reza</property>                              // user name
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
  		<property name="hbm2ddl.auto">update</property>  
+		<property name="show_sql">true</property>       // show queries in console 
     </session-factory>
 </hibernate-configuration>
 
