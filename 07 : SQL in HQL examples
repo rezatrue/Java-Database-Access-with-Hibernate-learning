@@ -1,0 +1,20 @@
+		
+Example 01: 
+    SQLQuery query = session.createSQLQuery("select * from student where marks > 60");
+		query.addEntity(Student.class);
+		List<Student> students = query.list();
+		for (Student student : students) {
+			System.out.println(student);
+		}
+    
+Example 02: 
+    SQLQuery query = session.createSQLQuery("select name,marks from student where marks > 60");
+		query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+		List objects = query.list();
+		for (Object object : objects) {
+			Map map = (Map) object;
+			System.out.println(map.get("name") + " : " + map.get("marks"));
+		}
+    
+    
+    
